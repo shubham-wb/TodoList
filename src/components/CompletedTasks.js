@@ -3,7 +3,7 @@ import React from "react";
 export default function CompletedTasks(props) {
   let completed_task = props.data;
   return (
-    <div className=''>
+    <div className='completed-tasks-container'>
       {completed_task && completed_task.length !== 0 ? (
         completed_task.map((elem) => (
           <div className='cp-cmp'>
