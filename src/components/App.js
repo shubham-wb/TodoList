@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "@mui/material";
 import "../assets/css/App.css"; //css
 //components
 import TasksList from "./TasksList";
@@ -74,6 +75,13 @@ export default function App() {
     toast.success("Task added Succesfully ");
   }
 
+  function deleteAllTasks() {
+    setTodosList(() => {
+      const newState = new Map();
+      return newState;
+    });
+  }
+
   function handleShowCreate() {
     setShowCreate(false);
   }
@@ -81,6 +89,18 @@ export default function App() {
     <>
       <Toaster position='top-center' reverseOrder={false} />{" "}
       <div className='App'>
+        <Button
+          id='delete_all'
+          variant='contained'
+          data-toggle='tooltip'
+          data-placement='bottom'
+          title='This will delete all Incompleted Tasks'
+          onClick={() => {
+            deleteAllTasks();
+          }}
+        >
+          Reset
+        </Button>
         <NavBar />
         <div className='create-task-banner'>
           <h1>Add a New Task </h1>
