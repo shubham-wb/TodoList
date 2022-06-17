@@ -2,6 +2,7 @@ import React from "react";
 
 export default function CompletedTasks(props) {
   let completed_task = props.data;
+
   return (
     <div className='completed-tasks-container'>
       {completed_task && completed_task.length !== 0 ? (
