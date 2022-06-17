@@ -6,11 +6,11 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TextField, Button } from "@mui/material";
 import "../assets/css/createTask.css";
 import { toast, Toaster } from "react-hot-toast";
+import { getDate } from "date-fns";
 
 function CreateTask(props) {
-  let [date, setDate] = useState("");
+  let [date, setDate] = useState(new Date());
   let [title, setTitle] = useState("");
-
   let [tag, setTag] = useState();
 
   function handleTagSelect(tag, id, color) {
@@ -37,12 +37,20 @@ function CreateTask(props) {
       );
     } else {
       let task = {
-        id: Date.now(),
+        id: Date.now() + date.getDate(),
         title: title,
-        date: date,
+        date: date.toLocaleDateString("en-GB"),
         tag: tag,
       };
       props.data(task);
+      setDate();
+      setTitle("");
+      setTag("");
+      let btns = document.getElementsByClassName("tag-btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].style.backgroundColor = "white";
+        btns[i].style.color = "black";
+      }
     }
   }
 
@@ -64,6 +72,7 @@ function CreateTask(props) {
             <DatePicker
               label='Select Date'
               value={date}
+              disablePast
               onChange={(newValue) => {
                 setDate(newValue);
               }}

@@ -25,9 +25,12 @@ export default function App() {
   useEffect(() => {
     if (todosList === true) {
       //if todolist gets empty
+      console.log(todosList, "delete");
       localStorage.removeItem("todos");
     }
     if (todosList && todosList !== true) {
+      console.log(todosList, "delete");
+
       //if todolist !empty
       localStorage.todos = JSON.stringify(Array.from(todosList.entries()));
     }
@@ -39,7 +42,12 @@ export default function App() {
   }, [completedTasks]);
   //delete task
   function deleteTask(id) {
-    todosList.delete(id); //delete from map
+    setTodosList((prev) => {
+      const newState = new Map(prev);
+      newState.delete(id);
+      return newState;
+    });
+    //delete from map
   }
 
   //mark task as completed

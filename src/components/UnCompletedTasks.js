@@ -5,10 +5,10 @@ export default function UnCompletedTasks(props) {
   return (
     <>
       {unCompletedTasks && unCompletedTasks !== true
-        ? [...unCompletedTasks.keys()].map((k) => (
+        ? [...unCompletedTasks.keys()].sort().map((k) => (
             <div key={k}>
-              <li>{k}</li>
               <div>{unCompletedTasks.get(k).title}</div>
+              <div>{unCompletedTasks.get(k).date}</div>
               <Button
                 variant='contained'
                 onClick={() => {
