@@ -212,4 +212,15 @@
   .un-cmp button {
     margin-right: 20px;
   }
+  .un-cmp-date {
+    font-size: 13px;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    color: gray;
+    justify-content: center;
+    align-items: center;
+    margin-right: 27px;
+    text-transform: capitalize;
+  }
 }
