@@ -4,7 +4,7 @@ import CompletedTasks from "./CompletedTasks";
 import { Button } from "@mui/material";
 
 export default function TasksList(props) {
-  let [showPendingList, setShowPendingList] = useState(true);
+  let [showPendingList, setShowPendingList] = useState(false);
   return (
     <div className='task-list'>
       <div>

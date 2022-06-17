@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import "../assets/css/App.css";
 import TasksList from "./TasksList";
 import CreateTask from "./CreateTask";
-
+import { Button } from "@mui/material";
+import { Toaster, toast } from "react-hot-toast";
+import { NavBar } from "./NavBar";
 export default function App() {
   let [todosList, setTodosList] = useState();
   let [completedTasks, setCompletedTasks] = useState([]);
-
+  let [showCreate, setShowCreate] = useState(false);
   //set tasks from local storage to state
   useEffect(() => {
     let data = localStorage.getItem("todos");
@@ -25,12 +27,9 @@ export default function App() {
   useEffect(() => {
     if (todosList === true) {
       //if todolist gets empty
-      console.log(todosList, "delete");
       localStorage.removeItem("todos");
     }
     if (todosList && todosList !== true) {
-      console.log(todosList, "delete");
-
       //if todolist !empty
       localStorage.todos = JSON.stringify(Array.from(todosList.entries()));
     }
@@ -47,6 +46,7 @@ export default function App() {
       newState.delete(id);
       return newState;
     });
+    toast.success("post deleted succesfully");
     //delete from map
   }
 
@@ -55,6 +55,7 @@ export default function App() {
     let completed_task = todosList.get(id);
     setCompletedTasks((prev) => [completed_task, ...prev]);
     setTodosList(todosList.delete(id)); //delete from map
+    toast.success("Task marked as completed");
   }
 
   //add task to uncompleted list
@@ -63,15 +64,31 @@ export default function App() {
       setTodosList(new Map());
     }
     setTodosList((prev) => new Map(prev).set(task.id, task));
-    // setTodosList((prev) => new Map([...prev, [task.id, task]]));
+    toast.success("Task added Succesfully ");
   }
 
   return (
-    <div className='App'>
-      <CreateTask data={addTodo} />
-      <TasksList
-        data={{ todosList, completedTasks, deleteTask, markAsCompleted }}
-      />
-    </div>
+    <>
+      <Toaster position='top-center' reverseOrder={false} />{" "}
+      <div className='App'>
+        <NavBar />
+        <div className='create-task-banner'>
+          <h1>Add a New Task </h1>
+          <Button
+            variant='Contained'
+            onClick={() => {
+              setShowCreate((prev) => !prev);
+            }}
+          >
+            +
+          </Button>
+        </div>
+        {showCreate ? <CreateTask data={addTodo} /> : null}
+
+        <TasksList
+          data={{ todosList, completedTasks, deleteTask, markAsCompleted }}
+        />
+      </div>
+    </>
   );
 }

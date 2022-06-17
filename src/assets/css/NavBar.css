@@ -1,0 +1,20 @@
+.Navbar {
+  height: "10px";
+  background-color: rgb(4, 4, 55);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Navbar img {
+  margin: "0px 20px";
+  height: 40px;
+  width: 40px;
+}
+
+.Navbar h2 {
+  height: 100%;
+  width: 100px;
+  margin-left: 10px;
+}

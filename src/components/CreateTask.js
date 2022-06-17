@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -12,6 +12,24 @@ function CreateTask(props) {
   let [date, setDate] = useState(new Date());
   let [title, setTitle] = useState("");
   let [tag, setTag] = useState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          document.getElementById("submit-btn").click();
+        }
+      });
+    }, 2000);
+
+    return () => {
+      document.removeEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          document.getElementById("submit-btn").click();
+        }
+      });
+    };
+  }, []);
 
   function handleTagSelect(tag, id, color) {
     let btn = document.querySelectorAll(".tag-btn");
@@ -42,6 +60,7 @@ function CreateTask(props) {
         date: date.toLocaleDateString("en-GB"),
         tag: tag,
       };
+
       props.data(task);
       setDate();
       setTitle("");
@@ -136,6 +155,8 @@ function CreateTask(props) {
         </div>
         <div className='submit-task'>
           <Button
+            id='submit-btn'
+            type='submit'
             variant='contained'
             onClick={() => {
               handleSubmit();
