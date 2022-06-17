@@ -1,0 +1,12 @@
+.create-task-wrapper {
+  height: 200px;
+  width: 600px;
+  border: solid 2px black;
+  background-color: rgb(255, 252, 252);
+}
+
+.tag-btn {
+  margin-left: 5px !important;
+  border-width: 3px !important;
+  color: "black" !important;
+}
