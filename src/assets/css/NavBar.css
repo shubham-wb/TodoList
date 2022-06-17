@@ -1,5 +1,6 @@
 .Navbar {
-  height: "10px";
+  height: 8vh;
+  width: 100%;
   background-color: rgb(4, 4, 55);
   color: white;
   display: flex;
@@ -8,12 +9,14 @@
 }
 
 .Navbar img {
-  margin: "0px 20px";
+  margin: 0px 10px;
   height: 40px;
   width: 40px;
 }
 
 .Navbar h2 {
+  display: flex;
+  align-items: center;
   height: 100%;
   width: 100px;
   margin-left: 10px;

@@ -1,0 +1,141 @@
+.task-list {
+  height: 80vh;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.btn-container {
+  display: flex;
+  background-color: transparent;
+  height: 10%;
+  width: 40%;
+}
+.btn-container button {
+  margin-left: 20px;
+}
+
+.uncompleted-tasks-wrapper {
+  height: 90%;
+  overflow-y: hidden;
+  width: 100%;
+}
+.uncompleted-tasks::-webkit-scrollbar {
+  visibility: hidden;
+}
+.uncompleted-tasks {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.uncompleted-tasks-wrapper h2 {
+  width: max-content;
+  border-bottom: solid 3px rgb(174, 255, 0);
+}
+.un-cmp {
+  border-radius: 20px;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  align-items: center;
+  background-color: whitesmoke;
+  margin-top: 20px;
+}
+
+.un-cmp input {
+  height: 30px;
+  width: 30px;
+  margin-right: 40px;
+}
+.un-cmp-title {
+  margin-right: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.un-cmp-tag {
+  height: 50%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 40px;
+  text-transform: capitalize;
+  border: solid 2px;
+}
+
+.un-cmp-date {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  color: gray;
+  justify-content: center;
+  align-items: center;
+  margin-right: 60px;
+  text-transform: capitalize;
+}
+
+.un-cmp button {
+  margin-left: 15%;
+}
+
+.completed-tasks-wrapper {
+  height: 90%;
+  width: 100%;
+}
+
+.completed-tasks-wrapper h2 {
+  width: max-content;
+  border-bottom: solid 3px blue;
+}
+.cp-cmp {
+  border-radius: 20px;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  align-items: center;
+  background-color: whitesmoke;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.cp-cmp-details {
+  height: 100%;
+  width: 40%;
+  align-items: center;
+  display: flex;
+}
+
+.cp-tag {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  border-radius: 15px;
+  border: solid 2px;
+  padding: 10px;
+}
+.cp-title {
+  text-transform: capitalize;
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.cp-date {
+  text-transform: capitalize;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}

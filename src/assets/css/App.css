@@ -6,3 +6,52 @@
 * {
   font-family: Poppins, sans-serif !important;
 }
+
+.App {
+  height: 92vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #36ff5199;
+}
+
+.create-task-banner {
+  z-index: 4;
+  margin-top: 40px;
+  height: 80px;
+  width: 50%;
+  border: solid 2px transparent;
+  border-radius: 20px 20px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+  box-shadow: 2px 0px 3px 1px grey;
+}
+
+.create-task-banner h1 {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-task-banner button {
+  height: 20px !important;
+  width: 20px !important;
+  font-size: 40px;
+  display: flex;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+}
+.create-task-banner button img {
+  height: 40px;
+  width: 40px;
+}

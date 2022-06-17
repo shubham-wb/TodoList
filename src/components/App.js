@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "../assets/css/App.css";
+import "../assets/css/App.css"; //css
+//components
 import TasksList from "./TasksList";
 import CreateTask from "./CreateTask";
-import { Button } from "@mui/material";
-import { Toaster, toast } from "react-hot-toast";
 import { NavBar } from "./NavBar";
+//other functions
+import { Toaster, toast } from "react-hot-toast";
+
+//App component
 export default function App() {
   let [todosList, setTodosList] = useState();
   let [completedTasks, setCompletedTasks] = useState([]);
@@ -67,6 +70,9 @@ export default function App() {
     toast.success("Task added Succesfully ");
   }
 
+  function handleShowCreate() {
+    setShowCreate(false);
+  }
   return (
     <>
       <Toaster position='top-center' reverseOrder={false} />{" "}
@@ -74,16 +80,21 @@ export default function App() {
         <NavBar />
         <div className='create-task-banner'>
           <h1>Add a New Task </h1>
-          <Button
-            variant='Contained'
+          <button
+            className='add-new-btn'
             onClick={() => {
               setShowCreate((prev) => !prev);
             }}
           >
-            +
-          </Button>
+            <img
+              src='https://cdn-icons-png.flaticon.com/512/1828/1828817.png'
+              alt='add'
+            ></img>
+          </button>
         </div>
-        {showCreate ? <CreateTask data={addTodo} /> : null}
+        {showCreate ? (
+          <CreateTask data={{ addTodo, handleShowCreate }} />
+        ) : null}
 
         <TasksList
           data={{ todosList, completedTasks, deleteTask, markAsCompleted }}

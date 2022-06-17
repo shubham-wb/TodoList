@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-
 import { TextField, Button } from "@mui/material";
-import "../assets/css/createTask.css";
 import { toast, Toaster } from "react-hot-toast";
-import { getDate } from "date-fns";
+
+import "../assets/css/createTask.css"; //css file
 
 function CreateTask(props) {
   let [date, setDate] = useState(new Date());
@@ -61,8 +60,9 @@ function CreateTask(props) {
         tag: tag,
       };
 
-      props.data(task);
-      setDate();
+      props.data.addTodo(task);
+      props.data.handleShowCreate();
+      setDate(new Date());
       setTitle("");
       setTag("");
       let btns = document.getElementsByClassName("tag-btn");
@@ -101,6 +101,8 @@ function CreateTask(props) {
         </div>
         <div className='create-task-options'>
           <div className='tags'>
+            <h2>Tags</h2>
+            <br></br>
             <Button
               className='tag-btn'
               variant='outlined'

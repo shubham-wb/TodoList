@@ -1,12 +1,93 @@
-.create-task-wrapper {
-  height: 200px;
-  width: 600px;
-  border: solid 2px black;
-  background-color: rgb(255, 252, 252);
-}
-
 .tag-btn {
   margin-left: 5px !important;
   border-width: 3px !important;
   color: "black" !important;
+}
+
+.create-task-wrapper {
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: 0px 2px 10px 2px gray;
+  background-color: rgb(255, 252, 252);
+  position: absolute;
+  top: 26%;
+  z-index: 2;
+  height: 300px;
+  width: 50%;
+  animation: popup 500ms ease;
+  animation-timing-function: linear;
+}
+@keyframes popup {
+  0% {
+    top: 0%;
+    visibility: hidden;
+    z-index: -1;
+  }
+  25% {
+    top: 10%;
+    visibility: hidden;
+    z-index: -1;
+  }
+  50% {
+    top: 15%;
+    visibility: hidden;
+    z-index: -1;
+  }
+  75% {
+    top: 20%;
+    visibility: hidden;
+    z-index: -1;
+  }
+  100% {
+    top: 26%;
+    visibility: visible;
+    z-index: 2;
+  }
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.create-task-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25%;
+  width: 100%;
+}
+
+.tags {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 90%;
+  margin-left: 10%;
+}
+.tags h2 {
+  font-size: 1rem;
+  margin-right: 40px;
+}
+.tag-btn {
+  width: 90px;
+  height: 40px;
+  margin-left: 40px;
+}
+
+.submit-task {
+  margin-top: 20px;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-task button {
+  font-size: 1rem;
+  height: 100% !important;
+  width: 200px !important;
 }
