@@ -3,10 +3,7 @@ import { Button } from "@mui/material";
 
 export default function UnCompletedTasks(props) {
   let unCompletedTasks = props.data.list;
-  if (unCompletedTasks && unCompletedTasks !== true) {
-    console.log([...unCompletedTasks.keys()]);
-    console.log([...unCompletedTasks.keys()].sort((a, b) => a.id - b.id));
-  }
+
   return (
     <>
       {unCompletedTasks && unCompletedTasks !== true ? (
@@ -27,10 +24,8 @@ export default function UnCompletedTasks(props) {
                 <div className='un-cmp-title'>
                   {unCompletedTasks.get(k).title}
                 </div>
-                <div className='un-cmp-date'>
-                  {unCompletedTasks.get(k).date}
-                </div>
               </div>
+              <div className='un-cmp-date'>{unCompletedTasks.get(k).date}</div>
               <Button
                 variant='contained'
                 onClick={() => {

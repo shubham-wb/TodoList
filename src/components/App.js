@@ -55,7 +55,6 @@ export default function App() {
 
   //mark task as completed
   function markAsCompleted(id) {
-    console.log(id, "completed");
     let completed_task = todosList.get(id);
     setCompletedTasks((prev) => [completed_task, ...prev]);
     setTodosList((prev) => {

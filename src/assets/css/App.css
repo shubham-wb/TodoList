@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #36ff5199;
+  background-color: #36d5ff0a;
 }
 
 .create-task-banner {
@@ -29,15 +29,17 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-
   box-shadow: 2px 0px 3px 1px grey;
 }
 
 .create-task-banner h1 {
+  font-size: 20px;
+  padding: 10px;
   height: 100%;
-  width: 40%;
+  width: 60%;
   display: flex;
-  justify-content: center;
+  margin-left: 20px;
+  /* justify-content: center; */
   align-items: center;
 }
 
@@ -56,4 +58,14 @@
 .create-task-banner button img {
   height: 40px;
   width: 40px;
+}
+
+/* Mobile View  */
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  .create-task-banner {
+    width: 95%;
+    height: 100px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
 }

@@ -8,7 +8,7 @@
   display: flex;
   background-color: transparent;
   height: 10%;
-  width: 40%;
+  width: 60%;
 }
 .btn-container button {
   margin-left: 20px;
@@ -25,8 +25,8 @@
   visibility: hidden;
 }
 .uncompleted-tasks {
-  height: 400px;
-  margin-bottom: 20px;
+  height: 300px;
+  margin-bottom: 10px;
   overflow-y: scroll;
 }
 
@@ -35,10 +35,11 @@
   border-bottom: solid 3px rgb(174, 255, 0);
 }
 .un-cmp {
+  box-shadow: 4px 3px 0px 0px darkgrey;
   border-radius: 20px;
   display: flex;
   height: 80px;
-  width: 100%;
+  width: 98%;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
@@ -68,8 +69,9 @@
   text-transform: capitalize;
 }
 .un-cmp-tag {
-  height: 50%;
+  height: 20%;
   width: 10%;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,16 +112,17 @@
   visibility: hidden;
 }
 .completed-tasks-container {
-  height: 400px;
+  height: 300px;
   margin-bottom: 20px;
   width: 100%;
   overflow-y: scroll;
 }
 .cp-cmp {
+  box-shadow: 4px 3px 0px 0px darkgrey;
   border-radius: 20px;
   display: flex;
   height: 80px;
-  width: 100%;
+  width: 98%;
   box-sizing: border-box;
   padding-left: 20px;
   align-items: center;
@@ -129,8 +132,10 @@
 }
 
 .cp-cmp-details {
+  justify-content: space-around;
   height: 100%;
-  width: 40%;
+  width: 50%;
+
   align-items: center;
   display: flex;
 }
@@ -162,4 +167,20 @@
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+}
+
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  .task-list {
+    width: 95%;
+  }
+  .uncompleted-tasks {
+    height: 700px;
+  }
+  .completed-tasks-container {
+    height: 700px;
+  }
+  .btn-container button {
+    height: 60px;
+    border-radius: 20px;
+  }
 }

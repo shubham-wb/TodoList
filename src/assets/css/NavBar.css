@@ -1,5 +1,5 @@
 .Navbar {
-  height: 8vh;
+  height: 10vh;
   width: 100%;
   background-color: rgb(4, 4, 55);
   color: white;
@@ -20,4 +20,9 @@
   height: 100%;
   width: 100px;
   margin-left: 10px;
+}
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  .Navbar {
+    justify-content: center;
+  }
 }

@@ -9,7 +9,7 @@
   box-shadow: 0px 2px 10px 2px gray;
   background-color: rgb(255, 252, 252);
   position: absolute;
-  top: 20%;
+  top: 25%;
   z-index: 2;
   height: 300px;
   width: 50%;
@@ -38,7 +38,7 @@
     z-index: -1;
   }
   100% {
-    top: 20%;
+    top: 25%;
     visibility: visible;
     z-index: 2;
   }
@@ -90,4 +90,40 @@
   font-size: 1rem;
   height: 100% !important;
   width: 200px !important;
+}
+
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  .create-task-wrapper {
+    top: 17%;
+    width: 95% !important;
+    animation: m-popup 500ms ease !important;
+    animation-timing-function: linear;
+  }
+  @keyframes m-popup {
+    0% {
+      top: 0%;
+      visibility: hidden;
+      z-index: -1;
+    }
+    25% {
+      top: 10%;
+      visibility: hidden;
+      z-index: -1;
+    }
+    50% {
+      top: 15%;
+      visibility: hidden;
+      z-index: -1;
+    }
+    75% {
+      top: 20%;
+      visibility: hidden;
+      z-index: -1;
+    }
+    100% {
+      top: 17%;
+      visibility: visible;
+      z-index: 2;
+    }
+  }
 }
